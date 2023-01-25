@@ -1,0 +1,222 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/Merriweather-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Timer App.gd" type="Script" id=2]
+[ext_resource path="res://assets/light-rain-ambient-114354.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/Digital Watch Alarm Long.mp3" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 109
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 1 )
+
+[node name="Timer App" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+alignment = 1
+
+[node name="TimeContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 486.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 23
+alignment = 1
+
+[node name="WorkingTimeContainer" type="HBoxContainer" parent="VBoxContainer/TimeContainer"]
+margin_top = 113.0
+margin_right = 984.0
+margin_bottom = 145.0
+size_flags_vertical = 4
+custom_constants/separation = 20
+alignment = 1
+
+[node name="WorkingTimeLabel" type="Label" parent="VBoxContainer/TimeContainer/WorkingTimeContainer"]
+margin_left = 259.0
+margin_right = 586.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 4 )
+text = "Working session duration:"
+
+[node name="WorkingTime" type="OptionButton" parent="VBoxContainer/TimeContainer/WorkingTimeContainer"]
+margin_left = 606.0
+margin_right = 725.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 7 )
+text = "25 minutes"
+
+[node name="BreakTimeContainer" type="HBoxContainer" parent="VBoxContainer/TimeContainer"]
+margin_top = 168.0
+margin_right = 984.0
+margin_bottom = 200.0
+size_flags_vertical = 4
+custom_constants/separation = 20
+alignment = 1
+
+[node name="BreakTimeLabel" type="Label" parent="VBoxContainer/TimeContainer/BreakTimeContainer"]
+margin_left = 245.0
+margin_right = 600.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 4 )
+text = "Session break time duration:"
+
+[node name="BreakTime" type="OptionButton" parent="VBoxContainer/TimeContainer/BreakTimeContainer"]
+margin_left = 620.0
+margin_right = 739.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 7 )
+text = "25 minutes"
+
+[node name="NumWorkingSessionContainer" type="HBoxContainer" parent="VBoxContainer/TimeContainer"]
+margin_top = 223.0
+margin_right = 984.0
+margin_bottom = 255.0
+size_flags_vertical = 5
+custom_constants/separation = 20
+alignment = 1
+
+[node name="NumWorkingSessionLabel" type="Label" parent="VBoxContainer/TimeContainer/NumWorkingSessionContainer"]
+margin_left = 242.0
+margin_right = 603.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 4 )
+text = "Number of working sessions:"
+
+[node name="NumWorkingSessions" type="OptionButton" parent="VBoxContainer/TimeContainer/NumWorkingSessionContainer"]
+margin_left = 623.0
+margin_right = 742.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 7 )
+text = "25 minutes"
+
+[node name="LongBreakContainer" type="HBoxContainer" parent="VBoxContainer/TimeContainer"]
+margin_top = 278.0
+margin_right = 984.0
+margin_bottom = 310.0
+size_flags_vertical = 5
+custom_constants/separation = 20
+alignment = 1
+
+[node name="LongBreakLabel" type="Label" parent="VBoxContainer/TimeContainer/LongBreakContainer"]
+margin_left = 292.0
+margin_right = 552.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 4 )
+text = "Long break duration:"
+
+[node name="LongBreakTime" type="OptionButton" parent="VBoxContainer/TimeContainer/LongBreakContainer"]
+margin_left = 572.0
+margin_right = 691.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 7 )
+text = "25 minutes"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/TimeContainer"]
+margin_left = 374.0
+margin_top = 333.0
+margin_right = 609.0
+margin_bottom = 373.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 6 )
+pressed = true
+text = "Rain Sounds"
+
+[node name="SessionLabel" type="Label" parent="VBoxContainer"]
+visible = false
+margin_top = 385.0
+margin_right = 984.0
+margin_bottom = 486.0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+custom_fonts/font = SubResource( 5 )
+text = "SESSION 2"
+align = 1
+valign = 1
+
+[node name="Countdown" type="Label" parent="VBoxContainer"]
+visible = false
+margin_top = 245.0
+margin_right = 984.0
+margin_bottom = 383.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 2 )
+text = "00:00:00:00"
+align = 1
+valign = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 490.0
+margin_right = 984.0
+margin_bottom = 560.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="StartStop" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_right = 984.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "START"
+
+[node name="Reset" type="Button" parent="VBoxContainer/ButtonContainer"]
+visible = false
+margin_left = 517.0
+margin_right = 984.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "RESET"
+
+[node name="CountdownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Alarm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 20.504
+
+[node name="RainSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/StartStop" to="." method="_on_StartStop_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/Reset" to="." method="_on_Reset_pressed"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]

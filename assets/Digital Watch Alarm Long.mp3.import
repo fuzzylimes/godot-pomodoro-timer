@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Digital Watch Alarm Long.mp3-9edd4cf4878166745ab9f3e6bceb3280.mp3str"
+
+[deps]
+
+source_file="res://assets/Digital Watch Alarm Long.mp3"
+dest_files=[ "res://.import/Digital Watch Alarm Long.mp3-9edd4cf4878166745ab9f3e6bceb3280.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

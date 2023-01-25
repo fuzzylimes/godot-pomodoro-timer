@@ -1,0 +1,26 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="Pomodoro Timer"
+config/description="Basic pomodoro timer for keeping you on track."
+run/main_scene="res://Timer App.tscn"
+run/low_processor_mode=true
+run/low_processor_mode_sleep_usec=50000
+config/icon="res://assets/icon.png"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
